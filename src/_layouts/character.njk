@@ -1,0 +1,181 @@
+---
+layout: base.njk
+name: ''
+player: ''
+className: ''
+subclass: ''
+level: 1
+exp: 0
+lineage: ''
+heritage: ''
+background: ''
+speed:
+  walk: 30
+luck: 0
+hp: 
+  max: 6
+  current: 6
+  temp: 0
+die:
+  type: d6
+  max: 1
+  used: 0
+death:
+  succes: 0
+  failures: 0
+exhaustion:
+  value: 0
+  conditions: []            
+stats: 
+  str:
+    stat: 8
+    proficient: false
+  dex:
+    stat: 8
+    proficient: false
+  con:
+    stat: 8
+    proficient: false
+  wint:
+    stat: 8
+    proficient: false
+  wis:
+    stat: 8
+    proficient: false
+  cha:
+    stat: 8
+    proficient: false  
+skills:
+  acrobatics:
+    stat: dex
+    proficient: false    
+  "animal handling":
+    stat: wis
+    proficient: false      
+  arcana:
+    stat: int
+    proficient: false  
+  athletics:
+    stat: str
+    proficient: false  
+  deception:
+    stat: cha
+    proficient: false  
+  history:
+    stat: int
+    proficient: false      
+  insight:
+    stat: wis
+    proficient: false      
+  intimidation:
+    stat: cha
+    proficient: false     
+  investivation:
+    stat: int
+    proficient: false     
+  medicine:
+    stat: wis
+    proficient: false      
+  nature:
+    stat: int
+    proficient: false      
+  perception:
+    stat: wis
+    proficient: false      
+  performance:
+    stat: cha
+    proficient: false      
+  persuasion:
+    stat: cha
+    proficient: false      
+  religion:
+    stat: int
+    proficient: false      
+  "slight of hand":
+    stat: dex
+    proficient: false      
+  stealth:
+    stat: dex
+    proficient: false      
+  surival:
+    stat: wis
+    proficient: false     
+proficiencies:
+  armor: []
+  weapons: []
+  tools : []
+languages: [common]
+talents: []
+features: []
+equipment: 
+  equiped: []
+  container: []
+money:
+  copper: 0
+  silver: 0
+  gold: 0
+  platinum: 0
+---
+
+<div class="character-header">
+  <div class="class-level">
+    <div class="group">
+      <p><span class="value">Level {{level}} {{className}}</span>
+      <span class="label">class & level</span></p>
+    </div>
+    <div class="group">
+      <p><span class="value">{{subclass}}</span>
+      <span class="label">subclass</span></p>
+    </div>
+    <div class="group">
+      <p><span class="value">{{exp}}</span>
+      <span class="label">experience points</span></p>
+    </div>
+  </div>
+  <div class="character-player">
+     <div class="group">
+      <p><span class="value">{{name}}</span>
+      <span class="label">character name</span></p>
+    </div>
+    <div class="group">
+      <p><span class="value">{{player}}</span>
+      <span class="label">player name</span></p>
+    </div>
+  </div>
+  <div class="background">
+    <div class="group">
+      <p><span class="value">{{lineage}}</span>
+      <span class="label">lineage</span></p>
+    </div>
+    <div class="group">
+      <p><span class="value">{{heritage}}</span>
+      <span class="label">heritage</span></p>
+    </div>
+    <div class="group">
+      <p><span class="value">{{background}}</span>
+      <span class="label">background</span></p>
+    </div>
+  </div>
+</div>  
+
+<div class="stats">
+  <div class="stat">
+    <p class="stat-mod">
+      <span class="value">{{stats.str.stat}}</span>
+      <span class="value mod">{{characters.statModifier(stats.str.stat)}}</span>
+      <span class="label">str</span>
+    </p>
+    <p class="save">
+      <span class="value">{{characters.skillMod(level, stats.str.stat, stats.str.proficient)}}</span>
+      <span class="label">save</span>
+      <span class="prof"><img src="/assets/star.svg" alt="proficient" /><span>
+    </p>
+  </div>
+</div>
+
+<div class="stuff">
+  <div class="pb">
+    <span class="label">proficieny bonus</span>
+    <span class="value">{{characters.pB(level)}}</span>
+  </div>
+{{ content | safe }}

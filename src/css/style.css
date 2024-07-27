@@ -3,6 +3,8 @@
 @import "https://unpkg.com/open-props/buttons.min.css";
 @import "https://unpkg.com/open-props/colors-hsl.min.css";
 
-* {
-  font-family: var(--font-transitional);
-}
+@import "global.css";
+@import "characters.css";
+
+
+

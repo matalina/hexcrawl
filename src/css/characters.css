@@ -1,0 +1,69 @@
+.value {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-2);
+  height: var(--size-7);
+  background: var(--gray-1);
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: var(--font-size-0);
+}
+
+.prof img{
+  height: var(--size-2);
+}
+
+.character-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.character-header > div {
+  width: 30%;
+  text-align: center
+}
+
+.character-header .group span {
+  display: block;
+  padding: var(--size-1);
+}
+
+.character-header .group .value {
+  border-bottom: 1px solid var(--gray-12);
+}
+
+.character-header .character-player .group .value {
+  font-size: var(--font-size-5);
+  height: var(--size-8);
+}
+
+.stats .stat span {
+  display: block;
+  padding: var(--size-1);
+}
+
+.stats .stat {
+  text-align: center;
+}
+
+.stats p {
+  border: 1px solid var(--gray-12);
+  border-radius: var(--radius-round);
+  padding-x: var(--size-3);
+  padding-y: var(--size-2);
+  position: relative;
+}
+
+.stats .stat-mod .mod {
+  position: absolute;
+  top: 0;
+  left: calc(100% + var(--size-px-2));
+}
+
+.stats .save .prof {
+  position: absolute;
+  top:0;
+  right:0;
+}
+
